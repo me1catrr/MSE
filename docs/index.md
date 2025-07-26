@@ -2,6 +2,11 @@
 
 Este es el material del curso **Monitorización de la Salud Estructural**.
 
+
+Por esto:
+
+```markdown
 ## Fórmulas en LaTeX
-```math
+
+```@math
 \sigma = \frac{F}{A}
