@@ -1,0 +1,21 @@
+name: Documentación
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: '1.10'
+      - name: Instalar dependencias
+        run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
+      - name: Construir y desplegar documentación
+        run: julia --project=docs -e 'using Pkg; Pkg.instantiate(); include("docs/make.jl")'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
