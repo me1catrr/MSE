@@ -1,7 +1,7 @@
-push!(LOAD_PATH, joinpath(@__DIR__, ".."))  # Añade la raíz del repo al LOAD_PATH
+push!(LOAD_PATH, joinpath(@__DIR__, ".."))  # <-- Esto es obligatorio
 
 using Documenter
-using MSE  # Ahora se podrá cargar desde src/MSE.jl
+using MSE  # El módulo debe existir en src/MSE.jl
 
 makedocs(
     sitename = "Monitorización de la Salud Estructural (MSE)",
@@ -17,3 +17,4 @@ deploydocs(
     branch = "gh-pages",
     devbranch = "main"
 )
+

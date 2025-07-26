@@ -1,6 +1,6 @@
 module MSE
 
-"Ejemplo de función"
+"Función de prueba"
 greet(name) = "Hola, $name"
 
 end
