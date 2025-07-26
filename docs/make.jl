@@ -5,7 +5,8 @@ makedocs(
     format = Documenter.HTML(prettyurls = get(ENV, "CI", nothing) == "true"),
     pages = [
         "Inicio" => "index.md"
-    ]
+    ],
+    build = joinpath(@__DIR__, "build")  # Forzar a usar docs/build
 )
 
 deploydocs(
@@ -13,4 +14,5 @@ deploydocs(
     branch = "gh-pages",
     devbranch = "main"
 )
+
 
