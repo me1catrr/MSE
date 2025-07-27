@@ -1,18 +1,22 @@
-push!(LOAD_PATH, joinpath(@__DIR__, "..")) # para encontrar tu módulo
-
+push!(LOAD_PATH, "../src/")
 using Documenter
 using MSE
 
 makedocs(
-    sitename = "Monitorización de la Salud Estructural (MSE)",
+    sitename = "Documentación de MSE",
+    format = Documenter.HTML(),
     modules = [MSE],
     pages = [
-        "Inicio" => "index.md"
+        "Inicio" => "index.md",
+        "Tutorial" => "tutorial.md",
+        "Fórmulas" => "formulas.md",
+        "API" => "api.md"
     ]
 )
 
 deploydocs(
-    repo = "github.com:me1catrr/MSE.git",
-    branch = "gh-pages",
-    devbranch = "main"
+    repo = "github.com/me1catrr/MSE.git",
+    push_preview = true
 )
+# MSE Documentation
+This package contains functions for handling series and statistics in Julia.

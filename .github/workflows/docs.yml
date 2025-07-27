@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+  release:
+    types: [published]
 
 jobs:
-  build:
+  docs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -21,7 +23,7 @@ jobs:
         run: |
           julia --project=docs -e '
             using Pkg;
-            Pkg.develop(Pkg.PackageSpec(path=pwd()));
+            Pkg.develop(PackageSpec(path=pwd()));
             Pkg.instantiate()'
 
       - name: Construir y publicar documentación

@@ -1,7 +1,8 @@
 # Bienvenido a MSE
 
-Documentación del curso **Monitorización de la Salud Estructural**.
+Este paquete contiene funciones para el manejo de series y estadísticas en Julia.
 
-```@contents
-Pages = ["index.md"]
-Depth = 2
+## Navegación
+- [Tutorial](tutorial.md)
+- [API](api.md)
+- [Fórmulas](formulas.md)
