@@ -1,3 +1,9 @@
+
+---
+
+### **4. Workflow para GitHub Actions**
+`.github/workflows/docs.yml`:
+```yaml
 name: Documentación
 
 on:
@@ -8,31 +14,23 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      # 1. Clonar el repositorio
-      - name: Checkout del repositorio
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      # 2. Instalar Julia
-      - name: Configurar Julia
-        uses: julia-actions/setup-julia@v1
+      - uses: julia-actions/setup-julia@v1
         with:
           version: '1.10'
 
-      # 3. Instalar dependencias del entorno docs
-      - name: Instalar dependencias de documentación
-        run: |
-          julia --project=docs -e '
-            using Pkg;
-            # Añade el paquete local (MSE) al entorno docs
-            Pkg.develop(path=".");
-            # Instala Documenter y dependencias
-            Pkg.instantiate();
-          '
+      - name: Instalar dependencias
+        run: julia --project=docs -e '
+          using Pkg;
+          Pkg.develop(PackageSpec(path=pwd()));
+          Pkg.instantiate()'
 
-      # 4. Construir y desplegar documentación
       - name: Construir y publicar documentación
-        run: julia --project=docs docs/make.jl
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: julia --project=docs docs/make.jl

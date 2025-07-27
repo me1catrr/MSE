@@ -1,12 +1,14 @@
+push!(LOAD_PATH, joinpath(@__DIR__, "..")) # para encontrar tu módulo
+
 using Documenter
+using MSE
 
 makedocs(
     sitename = "Monitorización de la Salud Estructural (MSE)",
-    format = Documenter.HTML(prettyurls = get(ENV, "CI", nothing) == "true"),
+    modules = [MSE],
     pages = [
         "Inicio" => "index.md"
-    ],
-    build = joinpath(@__DIR__, "build")  # Forzar a usar docs/build
+    ]
 )
 
 deploydocs(
@@ -14,5 +16,3 @@ deploydocs(
     branch = "gh-pages",
     devbranch = "main"
 )
-
-
