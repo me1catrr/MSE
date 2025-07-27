@@ -18,5 +18,3 @@ deploydocs(
     repo = "github.com/me1catrr/MSE.git",
     push_preview = true
 )
-# MSE Documentation
-This package contains functions for handling series and statistics in Julia.
