@@ -7,18 +7,10 @@ Documenter.jl soporta LaTeX mediante MathJax, lo que permite escribir ecuaciones
 ## Ejemplos de uso
 
 Ecuación en línea:  
-$E = mc^2$
+\$E = mc^2\$
 
 ---
 
 Ecuación centrada:  
-$$
+```math
 \int_0^\infty e^{-x} \, dx = 1
-$$
-
----
-
-Ecuación con fracciones:  
-$$
-\frac{a^2 + b^2}{c^2} = 1
-$$
