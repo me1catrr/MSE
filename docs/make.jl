@@ -10,9 +10,10 @@ makedocs(
         "Inicio" => "index.md",
         "Tutorial" => "tutorial.md",
         "Fórmulas" => "formulas.md",
-        "API" => "api.md"
+        "API" => "api.md",
         "Temas" => [
-        "Tema 1: Matemáticas SHM" => "temas/tema1.md"
+            "Tema 1: Matemáticas SHM" => "temas/tema1.md"
+        ]
     ]
 )
 
@@ -20,3 +21,4 @@ deploydocs(
     repo = "github.com/me1catrr/MSE.git",
     push_preview = true
 )
+
