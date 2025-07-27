@@ -24,7 +24,7 @@ Este tema introduce herramientas matemáticas fundamentales para el análisis de
 
 ---
 
-## Prácticas en Julia
+## Álgebra y Ecuaciones
 
 ### 1. Resolver un sistema sobredeterminado por mínimos cuadrados
 ```@example
@@ -36,3 +36,9 @@ b = [2.0, 2.5, 3.5]
 
 # Solución por mínimos cuadrados
 x = A \ b
+
+```julia
+using JuMP
+
+model = Model()
+@variable(model, x >= 0)
