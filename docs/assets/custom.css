@@ -1,0 +1,22 @@
+/* === Estilo REPL Julia oscuro === */
+pre.language-julia-repl {
+    background-color: #0d1117 !important; /* Fondo oscuro */
+    color: #c9d1d9 !important;           /* Texto general */
+    border-radius: 8px;
+    padding: 14px;
+    font-family: "Fira Code", monospace;
+    font-size: 14px;
+    overflow-x: auto;
+}
+
+/* Ocultar botón copiar SOLO para REPL */
+pre.language-julia-repl + .copy-button {
+    display: none !important;
+}
+
+/* === Colores de sintaxis para REPL === */
+pre.language-julia-repl .gp { color: #58a6ff; font-weight: bold; } /* Prompt julia> */
+pre.language-julia-repl .k  { color: #ff7b72; }   /* Palabras clave (using, function) */
+pre.language-julia-repl .n  { color: #c9d1d9; }   /* Identificadores */
+pre.language-julia-repl .mi { color: #79c0ff; }   /* Números */
+pre.language-julia-repl .s  { color: #a5d6ff; }   /* Strings */
