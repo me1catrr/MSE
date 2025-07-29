@@ -19,13 +19,20 @@ jobs:
         with:
           version: '1.10'
 
+      # Instalar dependencias del proyecto y de la documentación
       - name: Instalar dependencias
         run: |
           julia --project=docs -e '
             using Pkg;
-            Pkg.develop(PackageSpec(path=pwd()));
-            Pkg.instantiate()'
+            Pkg.develop(PackageSpec(path=pwd()));   # Vincula el paquete principal
+            Pkg.add([
+              PackageSpec(name="Documenter"),
+              PackageSpec(name="FFTW"),
+              PackageSpec(name="Plots")
+            ]);                                     # Añade dependencias extra para los ejemplos
+            Pkg.instantiate();                      # Instancia el entorno completo'
 
+      # Construir y publicar la documentación
       - name: Construir y publicar documentación
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
